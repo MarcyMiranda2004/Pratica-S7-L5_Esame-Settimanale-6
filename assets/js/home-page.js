@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <p class="card-text">${product.description}</p>
               
               <p class="card-text"><strong>Tipo di Prodotto:</strong> ${
-                product.productTipe
+                product.brand
               }</p>
               <p class="card-text"><strong>Prezzo:</strong> ${product.price.toFixed(
                 2

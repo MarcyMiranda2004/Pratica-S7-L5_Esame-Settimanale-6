@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const productData = {
       name: document.getElementById("name").value,
       description: document.getElementById("description").value,
-      productTipe: document.getElementById("productTipe").value,
+      brand: document.getElementById("brand").value,
       imageUrl: document.getElementById("imageUrl").value,
       price: parseFloat(document.getElementById("price").value),
     };
