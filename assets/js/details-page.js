@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log("Product ID:", productId);
 
-  // Credentials for validation (can be changed or moved to a safer location)
   const correctAdminEmail = "admin@email.com";
   const correctAdminPassword = "12345";
 
@@ -58,13 +57,11 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const showAdminModal = (action) => {
-    // Show the modal for admin login
     const adminModal = new bootstrap.Modal(
       document.getElementById("administrationModal")
     );
     adminModal.show();
 
-    // Admin login button click event
     document
       .getElementById("adminAccessButton")
       .addEventListener("click", () => {
@@ -75,10 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
           adminEmail === correctAdminEmail &&
           adminPassword === correctAdminPassword
         ) {
-          // Hide the modal
           adminModal.hide();
 
-          // Proceed with the action (either modify or delete product)
           action();
         } else {
           alert("Credenziali errate. Riprova.");
