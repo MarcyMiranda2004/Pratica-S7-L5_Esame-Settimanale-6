@@ -1,0 +1,8 @@
+@import 'customColors';
+@import 'customSize';
+
+$primary: $newPrimary;
+$secondary: $newSecondary;
+$success: $newTertiary;
+
+@import 'node_modules/bootstrap/scss/bootstrap';

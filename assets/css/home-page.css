@@ -1,0 +1,19 @@
+* {
+  color: #cdcea9 !important;
+}
+
+body {
+  background-color: antiquewhite;
+}
+
+#logo {
+  width: 6rem;
+}
+
+i {
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  color: #141c44 !important;
+}
