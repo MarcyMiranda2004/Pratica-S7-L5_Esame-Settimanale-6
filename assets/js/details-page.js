@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log("Product ID:", productId);
 
+  // Credentials for validation (can be changed or moved to a safer location)
+  const correctAdminEmail = "admin@email.com";
+  const correctAdminPassword = "12345";
+
   const getProductDetails = () => {
     fetch(`${productsURL}${productId}`, {
       method: "GET",
@@ -39,13 +43,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document
           .getElementById("modificaProdotto")
-          .addEventListener("click", () => modifyProduct(data));
+          .addEventListener("click", () =>
+            showAdminModal(() => modifyProduct(data))
+          );
         document
           .getElementById("eliminaProdotto")
-          .addEventListener("click", () => deleteProduct(data));
+          .addEventListener("click", () =>
+            showAdminModal(() => deleteProduct(data))
+          );
       })
       .catch((err) => {
         console.log("ERRORE NEL RECUPERO DATI DEL PRODOTTO", err);
+      });
+  };
+
+  const showAdminModal = (action) => {
+    // Show the modal for admin login
+    const adminModal = new bootstrap.Modal(
+      document.getElementById("administrationModal")
+    );
+    adminModal.show();
+
+    // Admin login button click event
+    document
+      .getElementById("adminAccessButton")
+      .addEventListener("click", () => {
+        const adminEmail = document.getElementById("adminEmail").value;
+        const adminPassword = document.getElementById("adminPassword").value;
+
+        if (
+          adminEmail === correctAdminEmail &&
+          adminPassword === correctAdminPassword
+        ) {
+          // Hide the modal
+          adminModal.hide();
+
+          // Proceed with the action (either modify or delete product)
+          action();
+        } else {
+          alert("Credenziali errate. Riprova.");
+        }
       });
   };
 

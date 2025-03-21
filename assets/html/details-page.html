@@ -96,6 +96,68 @@
           </div>
         </div>
       </nav>
+
+      <!-- modale admin -->
+      <div
+        class="modal fade"
+        id="administrationModal"
+        tabindex="-1"
+        aria-labelledby="administrationModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content bg-primary">
+            <div class="modal-header">
+              <h5
+                class="modal-title text-secondary"
+                id="administrationModalLabel"
+              >
+                Admin Login
+              </h5>
+              <button
+                type="button"
+                class="btn-close bg-danger"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p class="text-secondary">inserisci le credenziali da admin</p>
+              <p class="small text-secondary">
+                (le credenziali sono quelle dei placeholder)
+              </p>
+              <input
+                type="email"
+                placeholder="admin@email.com"
+                id="adminEmail"
+                class="text-black"
+              />
+              <input
+                type="password"
+                placeholder="12345"
+                id="adminPassword"
+                class="text-black"
+              />
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Chiudi
+              </button>
+              <button
+                type="button"
+                class="btn btn-tertiary text-secondary"
+                id="adminAccessButton"
+              >
+                Accedi
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
 
     <main class="container py-4">
