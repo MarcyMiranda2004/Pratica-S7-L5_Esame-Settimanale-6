@@ -67,7 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
               <p class="card-text"><strong>Prezzo:</strong> ${product.price.toFixed(
                 2
               )} €</p>
-              <a href="./assets/html/details-page.html" class="btn btn-primary">Dettagli</a>
+              <a href="./assets/html/details-page.html?id=${
+                product._id
+              }" class="btn btn-primary">Dettagli</a>
             </div>
           </div>
         `;

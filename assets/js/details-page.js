@@ -1,15 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const URLparameters = new URLSearchParams(location.search);
   const productId = URLparameters.get("id");
-
   const productsURL = "https://striveschool-api.herokuapp.com/api/product/";
 
   console.log("Product ID:", productId);
 
   const getProductDetails = () => {
     fetch(`${productsURL}${productId}`, {
-      // Corretto: utilizziamo GET, non POST
-      method: "GET", // Cambiato da POST a GET
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
         Authorization:
@@ -26,8 +24,20 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .then((data) => {
         console.log("DETTAGLI PRODOTTO", data);
-        const name = document.getElementById("name");
-        name.innerText = data.name;
+
+        // Get the elements by ID
+        const nameElement = document.getElementById("name");
+        const productTypeElement = document.getElementById("productTipe");
+        const descriptionElement = document.getElementById("description");
+        const priceElement = document.getElementById("price");
+        const imageUrlElement = document.getElementById("imageUrl");
+
+        // Update the content of the HTML elements with data from the API
+        nameElement.innerText = data.name;
+        productTypeElement.innerText = `Tipo di Prodotto: ${data.category}`;
+        descriptionElement.innerText = `Descrizione: ${data.description}`;
+        priceElement.innerText = `Prezzo: €${data.price}`;
+        imageUrlElement.src = data.imageUrl || "../img/placeholder.png"; // Fallback to a placeholder if no image URL is provided
       })
       .catch((err) => {
         console.log("ERRORE NEL RECUPERO DATI DEL PRODOTTO", err);
