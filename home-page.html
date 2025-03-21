@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="./assets/css/home-page.css" />
   </head>
 
-  <body class="vh-100">
+  <body class="min-vh-100">
     <header>
       <!-- navbar -->
       <nav class="navbar navbar-expand-lg bg-primary">
@@ -52,26 +52,29 @@
             <ul class="navbar-nav">
               <!-- home button -->
               <li class="nav-item">
-                <a class="nav-link active fs-4" aria-current="page" href="#"
+                <a
+                  class="nav-link active fs-4 text-secondary"
+                  aria-current="page"
+                  href="./home-page.html"
                   >Home</a
                 >
               </li>
 
               <!-- Features -->
               <li class="nav-item">
-                <a class="nav-link fs-4" href="#">Features</a>
+                <a class="nav-link fs-4 text-secondary" href="#">Features</a>
               </li>
 
               <!-- Pricing -->
               <li class="nav-item">
-                <a class="nav-link fs-4" href="#">Pricing</a>
+                <a class="nav-link fs-4 text-secondary" href="#">Pricing</a>
               </li>
 
               <!-- dropdown menu -->
               <li>
-                <div class="dropdown fs-4">
+                <div class="dropdown fs-4 text-secondary">
                   <button
-                    class="btn btn-primary dropdown-toggle fs-4"
+                    class="btn btn-primary dropdown-toggle fs-4 text-secondary"
                     type="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -82,15 +85,20 @@
                     class="dropdown-menu bg-primary border border-2 border-secondary"
                   >
                     <li>
-                      <button class="dropdown-item" id="administration">
+                      <button
+                        class="dropdown-item text-secondary"
+                        id="administration"
+                      >
                         Administration
                       </button>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">Service</a>
+                      <a class="dropdown-item text-secondary" href="#"
+                        >Service</a
+                      >
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">Info</a>
+                      <a class="dropdown-item text-secondary" href="#">Info</a>
                     </li>
                   </ul>
                 </div>
@@ -100,7 +108,7 @@
             <!-- search bar -->
             <div class="d-flex justify-content-center align-items-center">
               <nav class="navbar bg-body-tertiary p-0">
-                <div class="container-fluid bg-primary">
+                <div class="container-fluid bg-primary bg-primary-nav">
                   <form class="d-flex" role="search ">
                     <input
                       class="form-control me-2"
@@ -117,13 +125,12 @@
                   </form>
                 </div>
               </nav>
-              <i class="bi bi-person-circle mx-3 fs-2"></i>
+              <i class="bi bi-person-circle mx-3 fs-2 text-secondary"></i>
             </div>
           </div>
         </div>
       </nav>
 
-      <!-- admin modal -->
       <!-- Modale per Administration -->
       <div
         class="modal fade"
@@ -135,7 +142,10 @@
         <div class="modal-dialog">
           <div class="modal-content bg-primary">
             <div class="modal-header">
-              <h5 class="modal-title" id="administrationModalLabel">
+              <h5
+                class="modal-title text-secondary"
+                id="administrationModalLabel"
+              >
                 Admin Login
               </h5>
               <button
@@ -146,8 +156,10 @@
               ></button>
             </div>
             <div class="modal-body">
-              <p>inserisci le credenziali da admin</p>
-              <p class="small">(le credenziali sono quelle dei placeholder)</p>
+              <p class="text-secondary">inserisci le credenziali da admin</p>
+              <p class="small text-secondary">
+                (le credenziali sono quelle dei placeholder)
+              </p>
               <input
                 type="email"
                 placeholder="admin@email.com"
@@ -184,14 +196,23 @@
 
     <main></main>
 
-    <footer class="bg-primary position-absolute bottom-0 vw-100 p-3">
+    <footer class="bg-primary p-3">
       <div class="d-flex flex-column justify-content-center align-items-center">
         <ul class="list-unstyled">
-          <label>Contatti:</label>
-          <li><i class="bi bi-instagram"></i> Arcadia_Games</li>
-          <li><i class="bi bi-facebook"></i> Arcadia-Games</li>
-          <li><i class="bi bi-telephone"></i> 081 xxx xxxx</li>
-          <li><i class="bi bi-envelope"></i> arcadia_games@gmail.com</li>
+          <label class="text-secondary">Contatti:</label>
+          <li class="text-secondary">
+            <i class="bi bi-instagram text-secondary"></i> Arcadia_Games
+          </li>
+          <li class="text-secondary">
+            <i class="bi bi-facebook text-secondary"></i> Arcadia-Games
+          </li>
+          <li class="text-secondary">
+            <i class="bi bi-telephone text-secondary"></i> 081 xxx xxxx
+          </li>
+          <li class="text-secondary">
+            <i class="bi bi-envelope text-secondary"></i>
+            arcadia_games@gmail.com
+          </li>
         </ul>
         <h5 class="text-secondary">
           &copy; Arcadia games 20xx - 20xx - tutti i diritti riservati

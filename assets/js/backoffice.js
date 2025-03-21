@@ -1,13 +1,14 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
+  // form per aggiungere prodotti
   const form = document.getElementById("product-form");
 
-  form.addEventListener("submit", function (event) {
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const productData = {
       name: document.getElementById("name").value,
       description: document.getElementById("description").value,
-      brand: document.getElementById("brand").value,
+      productTipe: document.getElementById("productTipe").value,
       imageUrl: document.getElementById("imageUrl").value,
       price: parseFloat(document.getElementById("price").value),
     };
