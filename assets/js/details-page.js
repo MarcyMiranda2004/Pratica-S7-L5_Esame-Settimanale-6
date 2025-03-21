@@ -25,19 +25,17 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((data) => {
         console.log("DETTAGLI PRODOTTO", data);
 
-        // Get the elements by ID
         const nameElement = document.getElementById("name");
         const productTypeElement = document.getElementById("productTipe");
         const descriptionElement = document.getElementById("description");
         const priceElement = document.getElementById("price");
         const imageUrlElement = document.getElementById("imageUrl");
 
-        // Update the content of the HTML elements with data from the API
-        nameElement.innerText = data.name;
-        productTypeElement.innerText = `Tipo di Prodotto: ${data.category}`;
-        descriptionElement.innerText = `Descrizione: ${data.description}`;
-        priceElement.innerText = `Prezzo: €${data.price}`;
-        imageUrlElement.src = data.imageUrl || "../img/placeholder.png"; // Fallback to a placeholder if no image URL is provided
+        nameElement.innerHTML = `<strong class="fs-3">${data.name}</strong> `;
+        productTypeElement.innerHTML = `<strong>Tipo di Prodotto:</strong> ${data.category}`;
+        descriptionElement.innerHTML = `<strong>Descrizione:</strong> ${data.description}`;
+        priceElement.innerHTML = `<strong>Prezzo:</strong> €${data.price}`;
+        imageUrlElement.src = data.imageUrl || "../img/placeholder.png";
       })
       .catch((err) => {
         console.log("ERRORE NEL RECUPERO DATI DEL PRODOTTO", err);
